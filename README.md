@@ -13,7 +13,7 @@ The project structure is designed to assist you in getting started quickly. You 
         **userHandler.go** : handle user requests
         **orgHandler.go** : handle organizaation requests 
     - **middleware/**: Middleware functions.
-      -**middleware.go** : 
+      -**middleware.go** : *contains AuthMiddleware for bearer Token "5425861"* 
     - **routes/**: Route definitions.
         -**routes.go** 
   - **controllers/**: Business logic for each route.
@@ -29,7 +29,7 @@ The project structure is designed to assist you in getting started quickly. You 
           **userQueries.go** :user queries
           **orgQueries.go** :organization queries
   - **utils/**: Utility functions.
-  - **app.go**: Application initialization and setup.
+  - **app.go**: Application initialization and setup. *Must update mongodb localhost if want to run locally *
 - **main.go**: The entry point of the application.
 - **Dockerfile**: Instructions for building the application image.
 - **docker-compose.yaml**: Configuration for Docker Compose.
