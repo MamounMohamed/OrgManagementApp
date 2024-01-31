@@ -6,25 +6,32 @@ This repository houses a Golang-based API application designed for managing orga
 
 The project structure is designed to assist you in getting started quickly. You can modify it as needed for your specific requirements.
 
-- **cmd/**: Contains the main application file.
-  - **main.go**: The entry point of the application.
 
 - **pkg/**: Core logic of the application divided into different packages.
   - **api/**: API handling components.
     - **handlers/**: API route handlers.
+        **userHandler.go** : handle user requests
+        **orgHandler.go** : handle organizaation requests 
     - **middleware/**: Middleware functions.
+      -**middleware.go** : 
     - **routes/**: Route definitions.
+        -**routes.go** 
   - **controllers/**: Business logic for each route.
+      **userController.go** : user functions
+      **orgController.go** : organization functions
   - **database/**: Database-related code.
     - **mongodb/**
       - **models/**: Data models.
+          **user.go** user model
+          **organization.go** organization model
       - **repository/**: Database operations.
+          **connect.go** :connect database and create collections
+          **userQueries.go** :user queries
+          **orgQueries.go** :organization queries
   - **utils/**: Utility functions.
   - **app.go**: Application initialization and setup.
-
-- **docker/**: Docker-related files.
-  - **Dockerfile**: Instructions for building the application image.
-
+- **main.go**: The entry point of the application.
+- **Dockerfile**: Instructions for building the application image.
 - **docker-compose.yaml**: Configuration for Docker Compose.
 
 - **config/**: Configuration files for the application.
