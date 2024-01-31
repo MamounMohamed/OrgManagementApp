@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "70f4ba20-67f1-4815-ade1-99879e3e5f92",
+		"name": "organization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28193617",
+		"_collection_link": "https://www.postman.com/mamounn/workspace/go-project/collection/28193617-70f4ba20-67f1-4815-ade1-99879e3e5f92?action=share&source=collection_link&creator=28193617"
+	},
+	"item": [
+		{
+			"name": "create-organization",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "5425861",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Ideanest2\",\r\n    \"description\" : \"nice\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/organization",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"organization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read-organization",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "5425861",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/organization/1706681002009",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"organization",
+						"1706681002009"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read-all-organizations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "5425861",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/organization",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"organization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-organization",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "5425861",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Ideanest\",\r\n    \"description\" : \"niceeeegedan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/organization/1706681002009",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"organization",
+						"1706681002009"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-organization",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "5425861",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/organization/ 1706681002009",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"organization",
+						" 1706681002009"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invite-user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "5425861",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"mammounnnn@ideanest.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/organization/1706675901985/invite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"organization",
+						"1706675901985",
+						"invite"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Auth",
+			"value": "5425861"
+		}
+	]
+}
