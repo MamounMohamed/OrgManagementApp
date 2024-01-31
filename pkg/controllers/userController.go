@@ -116,6 +116,7 @@ func Signin(email string, password string) (error, string, string) {
 	if err != nil {
 		return err, "", ""
 	}
+
 	if user == nil {
 		return fmt.Errorf("user not found"), "", ""
 	}
@@ -134,13 +135,7 @@ func Signin(email string, password string) (error, string, string) {
 	}
 
 	userdatabase.UpdateTokens(email, acc_token, refresh_token)
-	UpdateTokens(user, acc_token, refresh_token)
 	return nil, acc_token, refresh_token
-}
-
-func UpdateTokens(user *models.User, acc_token string, ref_token string) {
-	user.AccsesToken = acc_token
-	user.RefreshToken = ref_token
 }
 
 func CreateAccessToken(userID string) (string, error) {
@@ -159,25 +154,24 @@ func CreateAccessToken(userID string) (string, error) {
 
 	return tokenString, nil
 }
-func UpdateAccsesToken(ref_token string) (*models.User, error) {
+func UpdateAccsesToken(ref_token string) (string, error) {
 	user, err := userdatabase.GetUserByToken(ref_token)
 
 	if user == nil {
-		return nil, fmt.Errorf("Refresh token not found")
+		return "", fmt.Errorf("Refresh token not found")
 	}
 
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
 	new_acc_token, err := CreateAccessToken(user.ID.String())
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
 	userdatabase.UpdateAccsesToken(ref_token, new_acc_token)
-	user.AccsesToken = new_acc_token
-	return user, nil
+	return new_acc_token, nil
 }
 func CreateRefreshToken(userID string) (string, error) {
 	refreshClaims := &Claims{

@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"mammounnnn@ideanest.com\",\r\n    \"password\": \"52\"\r\n\r\n}",
+					"raw": "{\r\n    \"email\":\"mammoun@ideanest.com\",\r\n    \"password\":\"52\"\r\n }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,7 +70,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"refresh_token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiT2JqZWN0SUQoXCI2NWI5Y2U2ODY1MzMxZjgwMDZkNjMyNjBcIikiLCJleHAiOjE3MDcyODU3NzV9.wTTimySKy2CU38Tc3Ha2RNwupg5A0uqxkqv44Q-i9oI\"\r\n}",
+					"raw": "{\r\n    \"refresh_token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiT2JqZWN0SUQoXCI2NWJhYjBmYmYwMzA0YWUxMWE0MjRmOGRcIikiLCJleHAiOjE3MDczNDUwMzF9.lHXJ4ilrnUlPE2IdLawAS3or3AW-OGnR-HGr6hOYqtU\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

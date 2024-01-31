@@ -21,7 +21,7 @@ type App struct {
 func InitializeApp(port int) *App {
 	// Connect to MongoDB
 	// To run locally change this to "mongodb://localhost:27017"
-	err := mongodb.InitMongoDB("mongodb://db:27017", "new-db")
+	err := mongodb.InitMongoDB("mongodb://localhost:27017", "new-db")
 	if err != nil {
 		fmt.Printf("Error connecting to MongoDB: %v\n", err)
 		return nil

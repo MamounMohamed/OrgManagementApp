@@ -32,7 +32,7 @@ func GetOrganizationById(id string) (*models.Organization, error) {
 		return nil, fmt.Errorf("Couldn't read organization")
 	}
 	if err != nil {
-		return org, err
+		return nil, err
 	}
 
 	return org, nil
@@ -40,10 +40,10 @@ func GetOrganizationById(id string) (*models.Organization, error) {
 func GetAllOrganizations() ([]models.Organization, error) {
 	organizations, err := orgDatabase.GetAllOrganizations()
 	if organizations == nil {
-		return nil, err
+		return nil, fmt.Errorf("No Organizations found")
 	}
 	if err != nil {
-		return organizations, err
+		return nil, err
 	}
 	return organizations, nil
 }
@@ -58,7 +58,7 @@ func UpdateOrganization(id, name, description string) (*models.Organization, err
 		return nil, err
 	}
 	if res == nil {
-		return nil, nil
+		return nil, fmt.Errorf("Couldn't retrive the organization")
 	}
 	return res, nil
 }

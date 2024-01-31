@@ -20,7 +20,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\" : \"Ideanest2\",\r\n    \"description\" : \"nice\"\r\n}",
+					"raw": "{\r\n    \"name\" : \"Ideanest\",\r\n    \"description\" : \"nice\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -53,7 +53,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/organization/1706681002009",
+					"raw": "http://localhost:8080/organization/1706739801015",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -61,7 +61,7 @@
 					"port": "8080",
 					"path": [
 						"organization",
-						"1706681002009"
+						"1706739801015"
 					]
 				}
 			},
@@ -105,7 +105,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\" : \"Ideanest\",\r\n    \"description\" : \"niceeeegedan\"\r\n}",
+					"raw": "{\r\n    \"name\" : \"Ideanest\",\r\n    \"description\":\"niceeeegedannnn\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -113,7 +113,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/organization/1706681002009",
+					"raw": "http://localhost:8080/organization/1706739801015",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -121,7 +121,7 @@
 					"port": "8080",
 					"path": [
 						"organization",
-						"1706681002009"
+						"1706739801015"
 					]
 				}
 			},
@@ -139,7 +139,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/organization/ 1706681002009",
+					"raw": "http://localhost:8080/organization/1706739536626",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -147,7 +147,7 @@
 					"port": "8080",
 					"path": [
 						"organization",
-						" 1706681002009"
+						"1706739536626"
 					]
 				}
 			},
@@ -166,7 +166,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"email\":\"mammounnnn@ideanest.com\"}",
+					"raw": "{\"email\":\"mammoun@ideanest.com\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -174,7 +174,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/organization/1706675901985/invite",
+					"raw": "http://localhost:8080/organization/1706739801015/invite",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -182,7 +182,7 @@
 					"port": "8080",
 					"path": [
 						"organization",
-						"1706675901985",
+						"1706739801015",
 						"invite"
 					]
 				}

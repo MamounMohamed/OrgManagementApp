@@ -43,29 +43,34 @@ func GetUserByEmail(email string) (*models.User, error) {
 	if err != nil {
 		return nil, fmt.Errorf("Error getting user: %v", err)
 	}
+
 	return &user, nil
 }
 
 func UpdateTokens(email, acc_token, ref_token string) error {
 	filter := bson.D{{Key: "email", Value: email}}
-	update := bson.D{{Key: "$set", Value: bson.D{{Key: "accsess_token", Value: acc_token}, {Key: "refresh_token", Value: ref_token}}}}
+	update := bson.D{{Key: "$set", Value: bson.D{{Key: "accsestoken", Value: acc_token}, {Key: "refreshtoken", Value: ref_token}}}}
 	_, err := GetMongoClient().Database("new-db").Collection("Users").UpdateOne(context.Background(), filter, update)
 	if err != nil {
 		return fmt.Errorf("Couldn't update token")
 	}
-	user, err := GetUserByEmail(email)
-
-	user.AccsesToken = acc_token
-	user.RefreshToken = ref_token
-
 	return nil
+}
+
+func GetTokens(email string) (*models.User, error) {
+	user, err := GetUserByEmail(email)
+	if err != nil || user == nil {
+		return nil, fmt.Errorf("Couldn't get tokens")
+	}
+	return user, nil
+
 }
 func GetUserByToken(ref_token string) (*models.User, error) {
 	var user models.User
-	filter := bson.M{"refresh_token": ref_token}
+	filter := bson.M{"refreshtoken": ref_token}
 	err := GetMongoClient().Database("new-db").Collection("Users").FindOne(context.Background(), filter).Decode(&user)
 	if err == mongo.ErrNoDocuments {
-		return nil, nil
+		return nil, fmt.Errorf("No user found with refresh token")
 	}
 	if err != nil {
 		return nil, fmt.Errorf("Error getting user: %v", err)
@@ -75,19 +80,11 @@ func GetUserByToken(ref_token string) (*models.User, error) {
 }
 
 func UpdateAccsesToken(ref_token, acc_token string) error {
-	user, err := GetUserByToken(ref_token)
-	if user == nil {
-		return fmt.Errorf("User in not found")
-	}
-
-	if err != nil {
-		return err
-	}
-	filter := bson.D{{Key: "_id", Value: user.ID}}
-	update := bson.D{{Key: "$set", Value: bson.M{"accsess_token": acc_token}}}
-	_, err = GetMongoClient().Database("new-db").Collection("Users").UpdateOne(context.Background(), filter, update)
-	if err != nil {
-		return err
+	filter := bson.D{{Key: "refreshtoken", Value: ref_token}}
+	update := bson.D{{Key: "$set", Value: bson.M{"accsestoken": acc_token}}}
+	res, err := GetMongoClient().Database("new-db").Collection("Users").UpdateOne(context.Background(), filter, update)
+	if err != nil || res.ModifiedCount == 0 {
+		return fmt.Errorf("Couldn't update accses token")
 	}
 	return nil
 }
